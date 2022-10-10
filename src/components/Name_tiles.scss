@@ -1,0 +1,23 @@
+.tile-wrap {
+	width: 80%;
+    margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8.75em, 1fr));
+	gap: 1em;
+	.title-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid #dccfb7;
+		border-radius: 0.5em;
+		min-height: 8.75em;
+		max-height: 1fr;
+		p {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 3.75em;
+			line-height: 1.4;
+			color: #1c1a19;
+		}
+	}
+}

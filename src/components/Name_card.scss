@@ -1,0 +1,30 @@
+.name-card-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	.name-card {
+		max-width: 520px;
+		max-height: 690px;
+		background-color: red;
+		.header {
+			.slang-wrap {
+				.slang {
+					font-style: normal;
+					font-weight: 600;
+					font-size: 70px;
+					line-height: 100%;
+					letter-spacing: -0.05em;
+					color: #ffffff;
+				}
+				.englishName {
+				}
+			}
+		}
+	}
+}
