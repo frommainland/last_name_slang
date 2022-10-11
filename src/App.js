@@ -5,12 +5,22 @@ import Header from './components/Header';
 import { Bot_filter } from './components/Bot_filter';
 import { Name_tiles } from './components/Name_tiles';
 import { names } from './data/name_data'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Name_card from './components/Name_card';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
+
     const [index, setIndex] = useState(false);
+
+    // React: Prevent scroll when modal is open
+    useEffect(() => {
+        document.body.style.overflow = index ? 'hidden' : 'unset'
+        document.body.style.paddingRight = index ? '15px' : '0px'
+    }, [index])
+
+
+
     return (
         <div className="App">
             <Nav />
