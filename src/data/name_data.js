@@ -120,7 +120,7 @@ export const names = [
         id: 14,
         url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
         chineseName: "吕",
-        description: "照“吕”字可析作两个“口”",
+        description: "“吕”字可拆为双“口”",
         englishName: 'Lucero',
         method: '拆字',
         slang: '双口蔓'

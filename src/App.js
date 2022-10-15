@@ -1,4 +1,5 @@
 import './App.css';
+import './font.css'
 import "the-new-css-reset/css/reset.css"
 import Nav from './components/Nav';
 import Header from './components/Header';
@@ -14,11 +15,10 @@ function App() {
     const [index, setIndex] = useState(false);
 
     // React: Prevent scroll when modal is open
-    useEffect(() => {
-        document.body.style.overflow = index ? 'hidden' : 'unset'
-        document.body.style.paddingRight = index ? '15px' : '0px'
-    }, [index])
-
+    // useEffect(() => {
+    //     document.body.style.overflow = index ? 'hidden' : 'unset'
+    //     document.body.style.paddingRight = index ? '15px' : '0px'
+    // }, [index])
 
 
     return (
@@ -26,18 +26,21 @@ function App() {
             <Nav />
             <Header />
             <Name_tiles items={names} setIndex={setIndex} />
-            <AnimatePresence>
+            <AnimatePresence wait>
                 {index !== false && (
                     <motion.div
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.6 }}
+                        animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         key="overlay"
                         className="overlay"
                         onClick={() => setIndex(false)}
                     />
                 )}
-                {index !== false && (<Name_card items={names} index={index} />)}
+                {index !== false && (
+                    <Name_card initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }} items={names} index={index} setIndex={setIndex} />
+                )}
             </AnimatePresence>
 
             <Bot_filter />

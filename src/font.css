@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'National_2_Medium';
+	src: url('../src/font/National_2\ _Medium.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'National_2_Regular_Italic';
+	src: url('../src/font/National_2_Regular\ Italic.otf') format('opentype');
+}
