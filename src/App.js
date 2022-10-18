@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import Name_card from './components/Name_card';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 function App() {
 
     const [index, setIndex] = useState(false);
@@ -19,6 +20,9 @@ function App() {
     //     document.body.style.overflow = index ? 'hidden' : 'unset'
     //     document.body.style.paddingRight = index ? '15px' : '0px'
     // }, [index])
+
+    //card-before-gradient-color
+    // const { colors } = useImageColor(`./${index}.jpg`, { cors: true, colors: 2 })
 
 
     return (

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react'
+import React, { useRef, useState, useLayoutEffect, useEffect } from 'react'
 import {
 	motion,
 	useMotionValue,
@@ -7,6 +7,8 @@ import {
 	useMotionTemplate,
 } from 'framer-motion'
 import useWindowSize from '../hooks/useWindowSize'
+// import useImageColor from 'use-image-color'
+import analyze from 'rgbaster'
 import './Name_card.scss'
 
 const Name_card = ({ items, index, setIndex }) => {
@@ -19,6 +21,7 @@ const Name_card = ({ items, index, setIndex }) => {
 			width: cardRef.current.clientWidth,
 			height: cardRef.current.clientHeight,
 		})
+
 	}
 	useLayoutEffect(() => {
 		getCardSize()
@@ -36,13 +39,25 @@ const Name_card = ({ items, index, setIndex }) => {
 		const rect = event.currentTarget.getBoundingClientRect()
 		x.set(event.clientX - rect.left)
 		y.set(event.clientY - rect.top)
-		console.log(gradientX.current, gradientY.current)
+		// console.log(gradientX.current, gradientY.current)
 	}
 
 	//card-before-gradient
 	const gradientX = useTransform(x, [0, cardSize.height], [82, 18])
 	const gradientY = useTransform(y, [0, cardSize.width], [82, 18])
 	const backgroundPosition = useMotionTemplate`${gradientX}% ${gradientY}%`
+
+	//card-before-gradient-color
+	// const { colors } = useImageColor(`./${index}.jpg`, { cors: true, colors: 2 })
+	const [color, setColor] = useState('')
+	const onHover = async (event) => {
+		const dom = await analyze(`./${index}.jpg`)
+		setColor(dom[1].color)
+		console.log(color)
+	}
+
+	// const result = await analyze(`./${2}.jpg`)
+	// console.log(result)
 
 	return (
 		<div className="name-card-wrap">
@@ -59,11 +74,13 @@ const Name_card = ({ items, index, setIndex }) => {
 					ref={cardRef}
 					className="name-card"
 					style={{
-						backgroundImage: `url('./${2}.jpg')`,
+						backgroundImage: `url('./${index+1}.jpg')`,
 						rotateX: rotateX,
 						rotateY: rotateY,
 					}}
-					onClick={() => setIndex(false)}
+					onClick={() => {
+						setIndex(false)
+					}}
 				>
 					<div className="header">
 						<div className="slang-wrap">
@@ -84,6 +101,8 @@ const Name_card = ({ items, index, setIndex }) => {
 						className="name-card-before"
 						style={{
 							backgroundPosition: backgroundPosition,
+							// border: `10px ${colorsArr} solid`,
+							// '--color1': colorsArr,
 						}}
 					></motion.div>
 				</motion.div>
