@@ -29,12 +29,16 @@ function App() {
         <div className="App">
             <Nav />
             <Header />
-            <Name_tiles items={names} setIndex={setIndex} />
+            <Name_tiles items={names} setIndex={setIndex} index={index} />
             <AnimatePresence wait>
                 {index !== false && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
+                        transition={{
+                            ease: [0.4, 0, 0.2, 1],
+                            duration: 0.5,
+                        }}
                         exit={{ opacity: 0 }}
                         key="overlay"
                         className="overlay"
