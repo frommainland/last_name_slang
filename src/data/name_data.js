@@ -18,7 +18,7 @@ export const names = [
         chineseName: "王",
         description: "兽中之王",
         englishName: 'Whitehead',
-        method: '联想',
+        method: "联想",
         slang: '虎头'
     },
     {

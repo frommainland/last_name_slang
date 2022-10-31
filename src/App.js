@@ -13,8 +13,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
 
-    const [index, setIndex] = useState(false);
-
     // React: Prevent scroll when modal is open
     // useEffect(() => {
     //     document.body.style.overflow = index ? 'hidden' : 'unset'
@@ -24,12 +22,18 @@ function App() {
     //card-before-gradient-color
     // const { colors } = useImageColor(`./${index}.jpg`, { cors: true, colors: 2 })
 
+    const [index, setIndex] = useState(false);
+    const [original, setOriginal] = useState(names)
+    const [filtered, setFiltered] = useState(names)
+    const [activeCards, setActiveCards] = useState('所有')
+
 
     return (
         <div className="App">
             <Nav />
             <Header />
-            <Name_tiles items={names} setIndex={setIndex} index={index} />
+            <Bot_filter original={original} setFiltered={setFiltered} activeCards={activeCards} setActiveCards={setActiveCards} />
+            <Name_tiles items={filtered} setIndex={setIndex} index={index} />
             <AnimatePresence wait>
                 {index !== false && (
                     <motion.div
@@ -50,8 +54,6 @@ function App() {
                         animate={{ opacity: 1 }} items={names} index={index} setIndex={setIndex} />
                 )}
             </AnimatePresence>
-
-            <Bot_filter />
         </div>
     );
 }

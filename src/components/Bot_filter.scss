@@ -1,0 +1,18 @@
+.filter-wrap {
+	display: inline-block;
+	background-color: white;
+	left: 50%;
+	transform: translateX(50%);
+	ul {
+		display: flex;
+		li {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 19px;
+			line-height: 27px;
+			text-align: center;
+			color: #1c1a19;
+			padding: 1em 2.5em;
+		}
+	}
+}

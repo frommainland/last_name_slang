@@ -25,7 +25,7 @@ export const Name_tiles = ({ items, setIndex, index }) => {
 				return (
 					<motion.div
 						className="title-item"
-						key={i}
+						key={item.id}
 						onClick={() => {
 							setIndex(i)
 						}}
