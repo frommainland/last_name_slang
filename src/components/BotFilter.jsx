@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
-import './Bot_filter.scss'
+import './BotFilter.scss'
 
-export const Bot_filter = ({
+export const BotFilter = ({
 	original,
 	setFiltered,
 	activeCards,

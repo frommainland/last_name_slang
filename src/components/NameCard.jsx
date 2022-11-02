@@ -15,7 +15,7 @@ import {
 import useWindowSize from '../hooks/useWindowSize'
 // import useImageColor from 'use-image-color'
 import analyze from 'rgbaster'
-import './Name_card.scss'
+import './NameCard.scss'
 
 //get mouse pos
 function getRelativeCoordinates(event, referenceElement) {
@@ -74,7 +74,7 @@ function getRelativeCoordinates(event, referenceElement) {
 
 //sticker
 
-const Name_card = ({ items, index, setIndex }) => {
+const NameCard = ({ items, index, setIndex }) => {
 	const size = useWindowSize()
 
 	const cardRef = useRef()
@@ -249,4 +249,4 @@ const Name_card = ({ items, index, setIndex }) => {
 	)
 }
 
-export default Name_card
+export default NameCard

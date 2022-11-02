@@ -3,11 +3,11 @@ import './font.css'
 import "the-new-css-reset/css/reset.css"
 import Nav from './components/Nav';
 import Header from './components/Header';
-import { Bot_filter } from './components/Bot_filter';
-import { Name_tiles } from './components/Name_tiles';
+import { BotFilter } from './components/BotFilter';
+import { NameTiles } from './components/NameTiles';
 import { names } from './data/name_data'
 import { useState, useEffect } from 'react';
-import Name_card from './components/Name_card';
+import NameCard from './components/NameCard';
 import { motion, AnimatePresence } from 'framer-motion';
 
 
@@ -32,8 +32,8 @@ function App() {
         <div className="App">
             <Nav />
             <Header />
-            <Bot_filter original={original} setFiltered={setFiltered} activeCards={activeCards} setActiveCards={setActiveCards} />
-            <Name_tiles items={filtered} setIndex={setIndex} index={index} />
+            <BotFilter original={original} setFiltered={setFiltered} activeCards={activeCards} setActiveCards={setActiveCards} />
+            <NameTiles items={filtered} setIndex={setIndex} index={index} />
             <AnimatePresence wait>
                 {index !== false && (
                     <motion.div
@@ -50,7 +50,7 @@ function App() {
                     />
                 )}
                 {index !== false && (
-                    <Name_card initial={{ opacity: 0 }}
+                    <NameCard initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }} items={filtered} index={index} setIndex={setIndex} />
                 )}
             </AnimatePresence>
