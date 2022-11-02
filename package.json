@@ -15,7 +15,6 @@
 		"rgbaster": "^2.1.1",
 		"sass": "^1.55.0",
 		"the-new-css-reset": "^1.7.3",
-
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
