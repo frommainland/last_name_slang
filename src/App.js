@@ -51,7 +51,7 @@ function App() {
                 )}
                 {index !== false && (
                     <Name_card initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }} items={names} index={index} setIndex={setIndex} />
+                        animate={{ opacity: 1 }} items={filtered} index={index} setIndex={setIndex} />
                 )}
             </AnimatePresence>
         </div>

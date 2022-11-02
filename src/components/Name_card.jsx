@@ -184,7 +184,7 @@ const Name_card = ({ items, index, setIndex }) => {
 					}}
 				>
 					<img
-						src={require(`../images/${index + 1}.jpg`)}
+						src={require(`../images/${items[index].id}.jpg`)}
 						alt="photo"
 					/>
 					<div className="header">
