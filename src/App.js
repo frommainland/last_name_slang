@@ -9,6 +9,12 @@ import { names } from './data/name_data'
 import { useState, useEffect } from 'react';
 import NameCard from './components/NameCard';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ContentBanditStart } from './components/ContentBanditStart';
+import { ContentBanditCode } from './components/ContentBanditCode'
+import { ContentBanditEnd } from './components/ContentBanditEnd';
+import { ContentBanditRef } from './components/ContentBanditRef';
+import { ContentBanditRule } from './components/ContentBanditRule';
+import { ContentStarter } from './components/ContentStarter';
 
 
 function App() {
@@ -32,6 +38,9 @@ function App() {
         <div className="App">
             <Nav />
             <Header />
+            <ContentStarter />
+            <ContentBanditStart />
+            <ContentBanditCode />
             <BotFilter original={original} setFiltered={setFiltered} activeCards={activeCards} setActiveCards={setActiveCards} />
             <NameTiles items={filtered} setIndex={setIndex} index={index} />
             <AnimatePresence wait>
@@ -54,6 +63,9 @@ function App() {
                         animate={{ opacity: 1 }} items={filtered} index={index} setIndex={setIndex} />
                 )}
             </AnimatePresence>
+            <ContentBanditRule />
+            <ContentBanditEnd />
+            <ContentBanditRef />
         </div>
     );
 }

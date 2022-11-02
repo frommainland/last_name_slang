@@ -3,27 +3,53 @@
 	background-color: #e8dac1;
 	border-radius: 10rem;
 	margin: 0 auto;
-    border: .5em solid #E8DAC1;
+	border: 0.5em solid #e8dac1;
 	ul {
 		display: flex;
 		li {
+			display: block;
 			font-style: normal;
 			font-weight: 600;
 			font-size: 19px;
 			line-height: 27px;
 			text-align: center;
-			color: #827a6d;
 			padding: 1em 1.875em;
 			font-style: normal;
 			font-weight: 600;
 			font-size: 1.1875em;
 			line-height: 1.4;
 			cursor: pointer;
+			position: relative;
+			height: 60px;
+			width: 98px;
+			.indicator {
+				border-radius: 100rem;
+				background-color: #fff4e1;
+				width: inherit;
+				height: inherit;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.label {
+				color: #827a6d;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.label.selected {
+				color: #1c1a19;
+			}
 		}
-        li:hover{
-            background-color: #EEE0C6;
-            border-radius: 100rem;
-            color: #1C1A19;
-        }
+
+		li:hover {
+			background-color: #eee0c6;
+			border-radius: 100rem;
+			color: #1c1a19;
+		}
 	}
 }
+
+// FFF4E1

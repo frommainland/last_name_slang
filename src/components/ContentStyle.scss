@@ -1,0 +1,43 @@
+.content-wrap {
+	max-width: 64ch;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 3em;
+	.title {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 150%;
+		color: #1c1a19;
+		margin-bottom: 0.5em;
+	}
+	p {
+		font-family: 'PingFang SC';
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 150%;
+		color: #524c47;
+		margin-bottom: 1em;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	blockquote {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		color: #524c47;
+		padding: 0.25em 1em;
+		border-left: 8px solid #1c1a19;
+		line-height: 1.6;
+		position: relative;
+
+		span {
+			display: block;
+			font-weight: bold;
+			margin-top: 1em;
+		}
+	}
+}
