@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 import './NameTiles.scss'
 import { smooth, flow, bouncy } from '../helper/easing'
-import useSize from '@react-hook/size'
 
 const whileHover = {
 	backgroundColor: '#F6EAD3',
@@ -12,17 +11,12 @@ const whileHover = {
 }
 
 export const NameTiles = ({ items, setIndex, index }) => {
-	const target = React.useRef()
-	const [width, height] = useSize(target)
 
 	return (
 		<motion.div className="tile-container">
-			<div>Width: {width}</div>
-			<div>Height: {height}</div>
 			<motion.div
 				layout
 				className="tile-wrap"
-				ref={target}
 				animate={{
 					scale: index == false ? 1 : 0.99,
 				}}

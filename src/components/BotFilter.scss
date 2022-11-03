@@ -1,15 +1,17 @@
 .filter-wrap {
-	max-width: fit-content;
-    max-width: 1200px;
-    width: 66%;
+	// max-width: fit-content;
+	// max-width: 1200px;
+	// width: 66%;
+	width: 90%;
+	max-width: 70vw;
 	background-color: #e8dac1;
 	border-radius: 10rem;
 	margin: 0 auto;
-    margin-bottom: 2.125em;
+	margin-bottom: 2.125em;
 	border: 0.5em solid #e8dac1;
 	ul {
 		display: flex;
-        justify-content: space-around;
+		justify-content: space-between;
 		li {
 			display: block;
 			font-style: normal;

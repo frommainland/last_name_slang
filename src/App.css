@@ -2,6 +2,10 @@
 	background-color: #f4e6cb;
 }
 
+.app {
+	position: relative;
+}
+
 .overlay {
 	background: rgba(0, 0, 0, 0.6);
 	position: fixed;

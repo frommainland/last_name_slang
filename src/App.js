@@ -8,7 +8,7 @@ import { NameTiles } from './components/NameTiles';
 import { names } from './data/name_data'
 import { useState, useEffect } from 'react';
 import NameCard from './components/NameCard';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { ContentBanditStart } from './components/ContentBanditStart';
 import { ContentBanditCode } from './components/ContentBanditCode'
 import { ContentBanditEnd } from './components/ContentBanditEnd';
@@ -16,6 +16,7 @@ import { ContentBanditRef } from './components/ContentBanditRef';
 import { ContentBanditRule } from './components/ContentBanditRule';
 import { ContentStarter } from './components/ContentStarter';
 import { ContentBanditCodeInName } from './components/ContentBanditCodeInName';
+import { BgImgScroll } from './components/BgImgScroll';
 
 
 function App() {
@@ -35,9 +36,19 @@ function App() {
     const [activeCards, setActiveCards] = useState('所有')
 
 
+    const { scrollY } = useScroll()
+
+    // useEffect(() => {
+    //     return scrollY.onChange((latest) => {
+    //         console.log("Page scroll: ", latest)
+    //     })
+    // }, [])
+
+
     return (
         <div className="App">
             <Nav />
+            <BgImgScroll />
             <Header />
             <ContentStarter />
             <ContentBanditStart />
