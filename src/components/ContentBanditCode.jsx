@@ -3,7 +3,7 @@ import React from 'react'
 export const ContentBanditCode = () => {
 	return (
 		<div className="content-wrap">
-			<h3 className="title">土匪黑话沟通</h3>
+			<h3 className="title">黑话沟通</h3>
 			<p>
 				为了保密和自身的安全。一是尽量减少和同行的火拼，二是增加内部的团结。
 			</p>

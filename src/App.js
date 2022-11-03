@@ -15,6 +15,7 @@ import { ContentBanditEnd } from './components/ContentBanditEnd';
 import { ContentBanditRef } from './components/ContentBanditRef';
 import { ContentBanditRule } from './components/ContentBanditRule';
 import { ContentStarter } from './components/ContentStarter';
+import { ContentBanditCodeInName } from './components/ContentBanditCodeInName';
 
 
 function App() {
@@ -41,9 +42,10 @@ function App() {
             <ContentStarter />
             <ContentBanditStart />
             <ContentBanditCode />
+            <ContentBanditCodeInName />
             <BotFilter original={original} setFiltered={setFiltered} activeCards={activeCards} setActiveCards={setActiveCards} />
             <NameTiles items={filtered} setIndex={setIndex} index={index} />
-            <AnimatePresence wait>
+            <AnimatePresence>
                 {index !== false && (
                     <motion.div
                         initial={{ opacity: 0 }}

@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 import './NameTiles.scss'
+import { smooth, flow, bouncy } from '../helper/easing'
+import useSize from '@react-hook/size'
 
 const whileHover = {
 	backgroundColor: '#F6EAD3',
@@ -10,32 +12,48 @@ const whileHover = {
 }
 
 export const NameTiles = ({ items, setIndex, index }) => {
+	const target = React.useRef()
+	const [width, height] = useSize(target)
+
 	return (
-		<motion.div
-			className="tile-wrap"
-			animate={{
-				scale: index == false ? 1 : 0.99,
-			}}
-			transition={{
-				ease: [0.4, 0, 0.2, 1],
-				duration: 0.5,
-			}}
-		>
-			{items.map((item, i) => {
-				return (
-					<motion.div
-						className="title-item"
-						key={item.id}
-						onClick={() => {
-							setIndex(i)
-						}}
-						layoutId={item}
-						whileHover={whileHover}
-					>
-						<p>{item.chineseName}</p>
-					</motion.div>
-				)
-			})}
+		<motion.div className="tile-container">
+			<div>Width: {width}</div>
+			<div>Height: {height}</div>
+			<motion.div
+				layout
+				className="tile-wrap"
+				ref={target}
+				animate={{
+					scale: index == false ? 1 : 0.99,
+				}}
+				transition={{
+					ease: [0.4, 0, 0.2, 1],
+					duration: 0.5,
+				}}
+			>
+				<AnimatePresence>
+					{items.map((item, i) => {
+						return (
+							<motion.div
+								layout
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								transition={{ ease: smooth, duration: 0.5 }}
+								className="title-item"
+								key={item.id}
+								onClick={() => {
+									setIndex(i)
+								}}
+								layoutId={item}
+								whileHover={whileHover}
+							>
+								<p>{item.chineseName}</p>
+							</motion.div>
+						)
+					})}
+				</AnimatePresence>
+			</motion.div>
 		</motion.div>
 	)
 }
