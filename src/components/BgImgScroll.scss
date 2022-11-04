@@ -14,12 +14,25 @@
 			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
 		transform: rotate(10deg);
 	}
-
+	.test {
+		background-image: url('../images/bg/2-1.jpg');
+		width: 200px;
+		height: 200px;
+		filter: drop-shadow(-14px 202px 81px rgba(0, 0, 0, 0.01))
+			drop-shadow(-8px 113px 68px rgba(0, 0, 0, 0.05))
+			drop-shadow(-3px 50px 51px rgba(0, 0, 0, 0.09))
+			drop-shadow(-1px 13px 28px rgba(0, 0, 0, 0.1))
+			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+		transform: rotate(3deg);
+        position: absolute;
+		top: 1000px;
+		left: 90px;
+	}
 	img {
 		position: absolute;
 		border: 8px solid #ffffff;
 		border-radius: 8px;
-        display: block;
+		display: block;
 	}
 	img:nth-child(2) {
 		filter: drop-shadow(-14px 202px 81px rgba(0, 0, 0, 0.01))

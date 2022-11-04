@@ -36,15 +36,6 @@ function App() {
     const [activeCards, setActiveCards] = useState('所有')
 
 
-    const { scrollY } = useScroll()
-
-    // useEffect(() => {
-    //     return scrollY.onChange((latest) => {
-    //         console.log("Page scroll: ", latest)
-    //     })
-    // }, [])
-
-
     return (
         <div className="App">
             <Nav />
