@@ -1,11 +1,10 @@
 .bg-img-wrap {
-    position: relative;
-    
+	border: 2px solid red;
 	.bg1 {
 		position: absolute;
 		width: 28vw;
 		left: 0px;
-		top: 86px;
+		top: 46px;
 		border: 8px solid #ffffff;
 		border-radius: 8px;
 		filter: drop-shadow(147px 228px 109px rgba(42, 31, 9, 0.01))
@@ -15,6 +14,42 @@
 			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
 		transform: rotate(10deg);
 	}
+
+	img {
+		position: absolute;
+		border: 8px solid #ffffff;
+		border-radius: 8px;
+        display: block;
+	}
+	img:nth-child(2) {
+		filter: drop-shadow(-14px 202px 81px rgba(0, 0, 0, 0.01))
+			drop-shadow(-8px 113px 68px rgba(0, 0, 0, 0.05))
+			drop-shadow(-3px 50px 51px rgba(0, 0, 0, 0.09))
+			drop-shadow(-1px 13px 28px rgba(0, 0, 0, 0.1))
+			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+		transform: rotate(3deg);
+		top: 1000px;
+		right: 90px;
+	}
+	img:nth-child(3) {
+		filter: drop-shadow(-26px 355px 142px rgba(42, 31, 9, 0.01))
+			drop-shadow(-15px 200px 120px rgba(42, 31, 9, 0.05))
+			drop-shadow(-7px 89px 89px rgba(42, 31, 9, 0.09))
+			drop-shadow(-2px 22px 49px rgba(42, 31, 9, 0.1))
+			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
+		top: 1100px;
+		right: -10px;
+	}
+	img:nth-child(4) {
+		filter: drop-shadow(0px 88.3742px 35.3497px rgba(42, 31, 9, 0.01))
+			drop-shadow(0px 49.6036px 29.6481px rgba(42, 31, 9, 0.05))
+			drop-shadow(0px 22.2361px 22.2361px rgba(42, 31, 9, 0.09))
+			drop-shadow(0px 5.70156px 11.9733px rgba(42, 31, 9, 0.1))
+			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
+		top: 1250px;
+		right: 45px;
+	}
+
 	.bg2 img {
 		position: absolute;
 		border: 8px solid #ffffff;
