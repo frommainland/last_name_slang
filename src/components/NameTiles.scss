@@ -1,4 +1,6 @@
 .tile-container {
+    z-index: 3;
+    position: relative;
 	width: 90%;
 	max-width: 80vw;
 	margin: 0 auto;

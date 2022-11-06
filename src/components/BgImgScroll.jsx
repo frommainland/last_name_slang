@@ -5,68 +5,94 @@ import {
 	useSpring,
 	useInView,
 } from 'framer-motion'
-import React from 'react'
-// import { useInView } from 'react-intersection-observer'
+import React, { useState, useLayoutEffect } from 'react'
 
 import './BgImgScroll.scss'
 import useWindowSize from '../hooks/useWindowSize'
 import { useRef } from 'react'
 
-export const BgImgScroll = () => {
+const Parallax = ({ offsetStart, offsetEnd, src, rotate = 0 }) => {
 	const windowsize = useWindowSize()
 	const { scrollY } = useScroll()
-
+	const [elementTop, setElementTop] = useState(0)
+	const [clientHeight, setClientHeight] = useState(0)
 	const ref = useRef(null)
-	const isInView = useInView(ref)
+	const initial = elementTop - clientHeight
+	const final = elementTop + Math.abs(offsetEnd)
 
 	const y = useSpring(
-		useTransform(
-			scrollY,
-			[0, windowsize.height],
-			[0, windowsize.height / -2]
-		),
+		useTransform(scrollY, [initial, final], [offsetStart, offsetEnd]),
 		{
 			stiffness: 100,
 			damping: 30,
 			restDelta: 0.001,
 		}
 	)
+	useLayoutEffect(() => {
+		const element = ref.current
+		// save our layout measurements in a function in order to trigger
+		// it both on mount and on resize
+		const onResize = () => {
+			// use getBoundingClientRect instead of offsetTop in order to
+			// get the offset relative to the viewport
+			setElementTop(
+				element.getBoundingClientRect().top + window.scrollY ||
+					window.pageYOffset
+			)
+			setClientHeight(window.innerHeight)
+		}
+		onResize()
+		window.addEventListener('resize', onResize)
+		return () => window.removeEventListener('resize', onResize)
+	}, [ref])
+	return (
+		<motion.div
+			className={`all img${src}`}
+			ref={ref}
+			style={{
+				y: y,
+				backgroundImage: `url(/images/bg/${src}.jpg)`,
+				rotate: rotate,
+			}}
+		></motion.div>
+	)
+}
 
+const ParallaxOld = ({ offsetStart, offsetEnd, src, alt, rotate }) => {
+	const windowsize = useWindowSize()
+	const { scrollY } = useScroll()
+
+	const ref = useRef(null)
+	const isInView = useInView(ref)
+	const y = useSpring(
+		useTransform(scrollY, [0, windowsize.height], [offsetStart, offsetEnd]),
+		{
+			stiffness: 100,
+			damping: 30,
+			restDelta: 0.001,
+		}
+	)
+	return (
+		<motion.img
+			ref={ref}
+			src={require(`../images/bg/${src}.jpg`)}
+			alt={alt}
+			style={{ y: isInView ? y : 0, rotate: rotate }}
+		/>
+	)
+}
+
+export const BgImgScroll = () => {
 	return (
 		<div className="bg-img-wrap">
-			<motion.img
-				className="bg1"
-				src={require(`../images/bg/1.jpg`)}
-				alt="general zhang zuolin on a postcard"
-				style={{ y: y }}
-			/>
-			<motion.img src={require(`../images/bg/2-1.jpg`)} alt="" />
-			<img src={require(`../images/bg/2-2.jpg`)} alt="" />
-			<img src={require(`../images/bg/2-3.jpg`)} alt="" />
-			{/* <div className="bg2">
-				<motion.img src={require(`../images/bg/2-1.jpg`)} alt="" />
-				<img src={require(`../images/bg/2-2.jpg`)} alt="" />
-				<img src={require(`../images/bg/2-3.jpg`)} alt="" />
-			</div> */}
-			{/* <motion.div
-				className="test"
-				ref={ref}
-				style={{ y: inView ? y : 0 }}
-				animate={{ scale: inView ? 2 : 1 }}
-			></motion.div> */}
-			<motion.div
-				ref={ref}
-				style={{
-					position: 'absolute',
-					top: '200vh',
-					fontSize: 60,
-					y: isInView ? y : 0,
-				}}
-				animate={{ scale: isInView ? 2 : 1 }}
-				transition={{ duration: 1 }}
-			>
-				1234
-			</motion.div>
+			<Parallax offsetStart={0} offsetEnd={-200} src={1} rotate={10} />
+			<Parallax offsetStart={50} offsetEnd={-50} src="2-1" rotate={3} />
+			<Parallax offsetStart={100} offsetEnd={-100} src="2-2" />
+			<Parallax offsetStart={20} offsetEnd={-20} src="2-3" />
+			<Parallax offsetStart={80} offsetEnd={-80} src={3} rotate={6} />
+			<Parallax offsetStart={200} offsetEnd={-200} src={4} rotate={-11} />
+			<Parallax offsetStart={50} offsetEnd={-50} src={5} rotate={7} />
+			<Parallax offsetStart={150} offsetEnd={-150} src={6} />
 		</div>
 	)
 }

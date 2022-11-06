@@ -1,74 +1,26 @@
 .bg-img-wrap {
-	border: 2px solid red;
-	.bg1 {
+	z-index: 1;
+
+	.all {
 		position: absolute;
-		width: 28vw;
-		left: 0px;
-		top: 46px;
-		border: 8px solid #ffffff;
+		border: 5px solid #ffffff;
 		border-radius: 8px;
+		background-size: cover;
+	}
+
+	.img1 {
+		left: -5vw;
+		top: 150px;
+		width: 28vw;
+		height: 35vw;
 		filter: drop-shadow(147px 228px 109px rgba(42, 31, 9, 0.01))
 			drop-shadow(83px 128px 92px rgba(42, 31, 9, 0.05))
 			drop-shadow(37px 57px 68px rgba(42, 31, 9, 0.09))
 			drop-shadow(9px 14px 37px rgba(42, 31, 9, 0.1))
 			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
-		transform: rotate(10deg);
-	}
-	.test {
-		background-image: url('../images/bg/2-1.jpg');
-		width: 200px;
-		height: 200px;
-		filter: drop-shadow(-14px 202px 81px rgba(0, 0, 0, 0.01))
-			drop-shadow(-8px 113px 68px rgba(0, 0, 0, 0.05))
-			drop-shadow(-3px 50px 51px rgba(0, 0, 0, 0.09))
-			drop-shadow(-1px 13px 28px rgba(0, 0, 0, 0.1))
-			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
-		transform: rotate(3deg);
-        position: absolute;
-		top: 1000px;
-		left: 90px;
-	}
-	img {
-		position: absolute;
-		border: 8px solid #ffffff;
-		border-radius: 8px;
-		display: block;
-	}
-	img:nth-child(2) {
-		filter: drop-shadow(-14px 202px 81px rgba(0, 0, 0, 0.01))
-			drop-shadow(-8px 113px 68px rgba(0, 0, 0, 0.05))
-			drop-shadow(-3px 50px 51px rgba(0, 0, 0, 0.09))
-			drop-shadow(-1px 13px 28px rgba(0, 0, 0, 0.1))
-			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
-		transform: rotate(3deg);
-		top: 1000px;
-		right: 90px;
-	}
-	img:nth-child(3) {
-		filter: drop-shadow(-26px 355px 142px rgba(42, 31, 9, 0.01))
-			drop-shadow(-15px 200px 120px rgba(42, 31, 9, 0.05))
-			drop-shadow(-7px 89px 89px rgba(42, 31, 9, 0.09))
-			drop-shadow(-2px 22px 49px rgba(42, 31, 9, 0.1))
-			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
-		top: 1100px;
-		right: -10px;
-	}
-	img:nth-child(4) {
-		filter: drop-shadow(0px 88.3742px 35.3497px rgba(42, 31, 9, 0.01))
-			drop-shadow(0px 49.6036px 29.6481px rgba(42, 31, 9, 0.05))
-			drop-shadow(0px 22.2361px 22.2361px rgba(42, 31, 9, 0.09))
-			drop-shadow(0px 5.70156px 11.9733px rgba(42, 31, 9, 0.1))
-			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
-		top: 1250px;
-		right: 45px;
 	}
 
-	.bg2 img {
-		position: absolute;
-		border: 8px solid #ffffff;
-		border-radius: 8px;
-	}
-	.bg2 img:nth-child(1) {
+	.img2-1 {
 		filter: drop-shadow(-14px 202px 81px rgba(0, 0, 0, 0.01))
 			drop-shadow(-8px 113px 68px rgba(0, 0, 0, 0.05))
 			drop-shadow(-3px 50px 51px rgba(0, 0, 0, 0.09))
@@ -76,24 +28,78 @@
 			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
 		transform: rotate(3deg);
 		top: 1000px;
-		right: 90px;
+		right: 9vw;
+		width: 15vw;
+		height: 9vw;
 	}
-	.bg2 img:nth-child(2) {
+	.img2-2 {
 		filter: drop-shadow(-26px 355px 142px rgba(42, 31, 9, 0.01))
 			drop-shadow(-15px 200px 120px rgba(42, 31, 9, 0.05))
 			drop-shadow(-7px 89px 89px rgba(42, 31, 9, 0.09))
 			drop-shadow(-2px 22px 49px rgba(42, 31, 9, 0.1))
 			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
 		top: 1100px;
-		right: -10px;
+		right: -1vw;
+		width: 13vw;
+		height: 15vw;
 	}
-	.bg2 img:nth-child(3) {
+	.img2-3 {
 		filter: drop-shadow(0px 88.3742px 35.3497px rgba(42, 31, 9, 0.01))
 			drop-shadow(0px 49.6036px 29.6481px rgba(42, 31, 9, 0.05))
 			drop-shadow(0px 22.2361px 22.2361px rgba(42, 31, 9, 0.09))
 			drop-shadow(0px 5.70156px 11.9733px rgba(42, 31, 9, 0.1))
 			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
 		top: 1250px;
-		right: 45px;
+		right: 3vw;
+		width: 13vw;
+		height: 13vw;
+	}
+
+	.img3 {
+		width: 16vw;
+		height: 16vw;
+		left: 3.5vw;
+		top: 1825px;
+		filter: drop-shadow(0px 87px 35px rgba(42, 31, 9, 0.01))
+			drop-shadow(0px 49px 29px rgba(42, 31, 9, 0.05))
+			drop-shadow(0px 22px 22px rgba(42, 31, 9, 0.09))
+			drop-shadow(0px 5px 12px rgba(42, 31, 9, 0.1))
+			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
+	}
+
+	.img4 {
+		width: 10vw;
+		height: 16vw;
+		left: 10vw;
+		top: 2200px;
+		filter: drop-shadow(0px 184.606px 73.7683px rgba(42, 31, 9, 0.01))
+			drop-shadow(0px 103.795px 62.2768px rgba(42, 31, 9, 0.05))
+			drop-shadow(0px 45.9662px 45.9662px rgba(42, 31, 9, 0.09))
+			drop-shadow(0px 11.4915px 25.2073px rgba(42, 31, 9, 0.1))
+			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
+	}
+
+	.img5 {
+		width: 27vw;
+		height: 18vw;
+		right: -5vw;
+		top: 3000px;
+		filter: drop-shadow(0px 157px 63px rgba(0, 0, 0, 0.01))
+			drop-shadow(0px 88px 53px rgba(0, 0, 0, 0.05))
+			drop-shadow(0px 39px 39px rgba(0, 0, 0, 0.09))
+			drop-shadow(0px 10px 22px rgba(0, 0, 0, 0.1))
+			drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+	}
+
+	.img6 {
+		width: 27vw;
+		height: 13.5vw;
+		right: 2vw;
+		top: 3200px;
+		filter: drop-shadow(0px 52px 21px rgba(42, 31, 9, 0.01))
+			drop-shadow(0px 29px 18px rgba(42, 31, 9, 0.05))
+			drop-shadow(0px 13px 13px rgba(42, 31, 9, 0.09))
+			drop-shadow(0px 3px 7px rgba(42, 31, 9, 0.1))
+			drop-shadow(0px 0px 0px rgba(42, 31, 9, 0.1));
 	}
 }

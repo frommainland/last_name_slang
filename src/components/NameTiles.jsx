@@ -18,7 +18,7 @@ export const NameTiles = ({ items, setIndex, index }) => {
 				layout
 				className="tile-wrap"
 				animate={{
-					scale: index == false ? 1 : 0.99,
+					scale: index === false ? 1 : 0.99,
 				}}
 				transition={{
 					ease: [0.4, 0, 0.2, 1],
