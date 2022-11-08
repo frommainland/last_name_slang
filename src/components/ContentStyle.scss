@@ -3,8 +3,9 @@
 	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 3.25em;
-    z-index: 3;
-    position: relative;
+	z-index: 3;
+	position: relative;
+	color: #524c47;
 	.title {
 		font-style: normal;
 		font-weight: 600;
@@ -13,13 +14,25 @@
 		color: #1c1a19;
 		margin-bottom: 0.5em;
 	}
+	cite {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 150%;
+		margin-bottom: 1rem;
+		display: block;
+		display: flex;
+		align-items: center;
+        a{
+            margin-right: .3rem;
+        }
+		a:hover {
+			text-decoration: underline;
+		}
+	}
 	p {
-		font-family: 'PingFang SC';
-		font-style: normal;
 		font-weight: 600;
 		font-size: 18px;
 		line-height: 150%;
-		color: #524c47;
 		margin-bottom: 1em;
 	}
 	p:last-child {
@@ -42,4 +55,63 @@
 			margin-top: 1em;
 		}
 	}
+	ul {
+		li {
+			padding: 20px 40px;
+			border: 2px solid #dccfb7;
+			margin-bottom: 0.75em;
+			background-color: #f4e6cb;
+			cursor: pointer;
+			.title {
+				margin-bottom: 0;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				p {
+					margin-bottom: 0;
+					font-style: normal;
+					font-weight: 600;
+					font-size: 24px;
+					line-height: 150%;
+					color: #524c47;
+				}
+				svg {
+					border-radius: 100%;
+				}
+			}
+			.details {
+				margin-top: 1.5em;
+			}
+		}
+	}
 }
+
+// /* plus */
+
+// width: 24px;
+// height: 24px;
+
+// /* Inside auto layout */
+// flex: none;
+// order: 1;
+// flex-grow: 0;
+
+// /* Vector */
+
+// position: absolute;
+// left: 50%;
+// right: 50%;
+// top: 20.83%;
+// bottom: 20.83%;
+
+// border: 2px solid #524C47;
+
+// /* Vector */
+
+// position: absolute;
+// left: 20.83%;
+// right: 20.83%;
+// top: 50%;
+// bottom: 50%;
+
+// border: 2px solid #524C47;
