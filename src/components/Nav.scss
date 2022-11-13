@@ -1,15 +1,116 @@
 .nav {
 	position: fixed;
 	padding: 2rem;
-	z-index: 4;
+	z-index: 5;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 50px;
+	height: 100px;
+	// background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #f4e6cb 1px);
+	// background-size: 4px 4px;
+	// backdrop-filter: blur(10px);
+	font-weight: 600;
+	line-height: 140%;
+	letter-spacing: -0.05em;
+	color: #1c1a19;
+	font-size: 1.5em;
+	margin: 0 20px;
+	.logo {
+		width: 84px;
+		background-color: transparent;
+	}
+	.about {
+		border-radius: 40px;
+		padding: 10px 20px;
+		cursor: pointer;
+	}
+}
+
+.about-mask {
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 	background-image: radial-gradient(rgba(0, 0, 0, 0) 1px, #f4e6cb 1px);
 	background-size: 4px 4px;
 	backdrop-filter: blur(10px);
+	box-shadow: 0px -22px 9px rgba(42, 31, 9, 0.01),
+		0px -13px 8px rgba(42, 31, 9, 0.05), 0px -6px 6px rgba(42, 31, 9, 0.09),
+		0px -1px 3px rgba(42, 31, 9, 0.1), 0px 0px 0px rgba(42, 31, 9, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5em;
+	font-style: normal;
+	font-weight: 600;
+	color: #1c1a19;
+	.flex {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 2rem;
+		.about-content {
+			max-width: 50ch;
+			width: 45%;
+			p {
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 150%;
+				color: #1c1a19;
+				margin-bottom: 1rem;
+				a {
+					font-size: 1.125rem;
+					svg {
+						margin-left: 0.25rem;
+						position: relative;
+						top: 1px;
+					}
+				}
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+
+			h1 {
+				font-weight: 600;
+				font-size: 1.75rem;
+				line-height: 140%;
+				letter-spacing: -0.05em;
+				margin-bottom: 1rem;
+			}
+		}
+		.about-website {
+			max-width: 50ch;
+			width: 45%;
+			p {
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 150%;
+				color: #1c1a19;
+				margin-bottom: 1rem;
+				a {
+					font-size: 1.125rem;
+					svg {
+						margin-left: 0.25rem;
+						position: relative;
+						top: 1px;
+					}
+				}
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+			h1 {
+				font-weight: 600;
+				font-size: 1.75rem;
+				line-height: 140%;
+				letter-spacing: -0.05em;
+				margin-bottom: 1rem;
+			}
+		}
+	}
 }

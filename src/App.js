@@ -35,7 +35,6 @@ function App() {
     const [filtered, setFiltered] = useState(names)
     const [activeCards, setActiveCards] = useState('所有')
 
-
     return (
         <div className="App">
             <Nav />
