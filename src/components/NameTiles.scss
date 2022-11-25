@@ -1,6 +1,6 @@
 .tile-container {
-    z-index: 3;
-    position: relative;
+	z-index: 3;
+	position: relative;
 	width: 90%;
 	max-width: 80vw;
 	margin: 0 auto;
@@ -12,7 +12,7 @@
 		justify-content: center;
 		align-items: center;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(6em, 8.75em));
+		grid-template-columns: repeat(auto-fit, minmax(1rem, 8.75rem));
 		gap: 1em;
 		.title-item {
 			cursor: pointer;
@@ -21,13 +21,16 @@
 			align-items: center;
 			border: 2px solid #dccfb7;
 			border-radius: 0.5em;
-			min-height: 8.75em;
+			// min-height: 8.75em;
+
 			max-height: 1fr;
 			background-color: #f4e6cb;
 			p {
 				font-style: normal;
 				font-weight: 600;
-				font-size: 3.75em;
+				// font-size: 3.75em;
+				font-size: clamp(1rem, calc(1rem + 2vw), 3.75rem);
+				padding: 1em;
 				line-height: 1.4;
 				color: #1c1a19;
 			}

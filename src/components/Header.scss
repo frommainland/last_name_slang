@@ -1,11 +1,14 @@
 .header {
-    z-index: 2;
-    position: relative;
+	z-index: 2;
+	position: relative;
+	margin: 0 auto;
 	margin-top: 30vh;
+	width: 90%;
 	h1 {
 		font-style: normal;
 		font-weight: 600;
 		font-size: 5rem;
+		font-size: clamp(3rem, 3rem + 2vw, 5rem);
 		line-height: 120%;
 		text-align: center;
 		color: #1c1a19;

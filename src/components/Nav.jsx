@@ -45,16 +45,20 @@ const Nav = ({ navClick, setNavClick }) => {
 				/>
 				<motion.div
 					className="about"
-					style={{ backgroundColor: 'rgba(244,230,203,0)' }}
+					style={{
+						backgroundColor: 'rgba(244,230,203,0.5)',
+						backdropFilter: 'blur(5px)',
+					}}
 					whileHover={hover}
 					transition={{ ease: smooth, duration: 0.5 }}
 					onClick={clickHandle}
 				>
-					关于 ©2022
+					关于网站&nbsp;©2022
 				</motion.div>
 			</div>
 			<motion.div
 				className="about-mask"
+				initial={{ y: '100vh' }}
 				animate={{
 					y: isOpen ? '0' : '100vh',
 					backdropFilter: isOpen ? 'blur(10px)' : 'blur(0px)',
@@ -70,6 +74,7 @@ const Nav = ({ navClick, setNavClick }) => {
 							<a
 								href="https://new-jargon.netlify.app/"
 								target="_blank"
+								rel="noreferrer"
 							>
 								查看第一个练习{LinkIcon}
 							</a>
@@ -82,6 +87,7 @@ const Nav = ({ navClick, setNavClick }) => {
 							<a
 								href="https://youtu.be/nJPERZDfyWc"
 								target="_blank"
+								rel="noreferrer"
 							>
 								Everything is a Remix Remastered (2015 HD)
 								{LinkIcon}
@@ -95,6 +101,7 @@ const Nav = ({ navClick, setNavClick }) => {
 							<a
 								href="https://github.com/frommainland/last_name_slang.git"
 								target="_blank"
+								rel="noreferrer"
 							>
 								网站源码github{LinkIcon}
 							</a>
@@ -103,6 +110,7 @@ const Nav = ({ navClick, setNavClick }) => {
 							<a
 								href="https://frommainland.netlify.app/"
 								target="_blank"
+								rel="noreferrer"
 							>
 								曾经及未来的项目{LinkIcon}
 							</a>

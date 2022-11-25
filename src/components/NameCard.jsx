@@ -1,10 +1,4 @@
-import React, {
-	useRef,
-	useState,
-	useLayoutEffect,
-	useEffect,
-	useCallback,
-} from 'react'
+import React, { useRef, useState, useLayoutEffect } from 'react'
 import {
 	motion,
 	useMotionValue,
@@ -13,8 +7,6 @@ import {
 	useMotionTemplate,
 } from 'framer-motion'
 import useWindowSize from '../hooks/useWindowSize'
-// import useImageColor from 'use-image-color'
-import analyze from 'rgbaster'
 import './NameCard.scss'
 
 //get mouse pos

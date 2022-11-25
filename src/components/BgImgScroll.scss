@@ -1,8 +1,7 @@
 .bg-img-wrap {
-	z-index: 1;
-
 	.all {
 		position: absolute;
+        z-index: 4;
 		border: 5px solid #ffffff;
 		border-radius: 8px;
 		background-size: cover;
@@ -12,7 +11,9 @@
 		left: -5vw;
 		top: 150px;
 		width: 28vw;
-		height: 35vw;
+        min-width: 160px;
+        aspect-ratio: 28/35;
+		// height: 35vw;
 		filter: drop-shadow(147px 228px 109px rgba(42, 31, 9, 0.01))
 			drop-shadow(83px 128px 92px rgba(42, 31, 9, 0.05))
 			drop-shadow(37px 57px 68px rgba(42, 31, 9, 0.09))

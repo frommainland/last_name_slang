@@ -38,7 +38,6 @@ function App() {
     return (
         <div className="App">
             <Nav />
-            <BgImgScroll />
             <Header />
             <ContentStarter />
             <ContentBanditStart />
@@ -46,6 +45,7 @@ function App() {
             <ContentBanditCodeInName />
             <BotFilter original={original} setFiltered={setFiltered} activeCards={activeCards} setActiveCards={setActiveCards} />
             <NameTiles items={filtered} setIndex={setIndex} index={index} />
+            <BgImgScroll />
             <AnimatePresence>
                 {index !== false && (
                     <motion.div
